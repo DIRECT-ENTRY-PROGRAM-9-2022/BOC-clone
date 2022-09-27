@@ -7,6 +7,12 @@
 .clear-fix{
     clear:both;
 }
+.clear-fix::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+/* typography */
 h1{
     font-size: 2rem;
     line-height: 2.2rem;
@@ -32,82 +38,272 @@ h6{
     line-height: 1rem;
 }
 /* layout */
-header{
 
+
+#app-row{
+    background-color: white;
+    height: 80px;
 }
-main{
-    background-color: green;
+#app-row>.container{
+    background-color: white;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-footer{
-    background-color: blue;
+#nav-row{
+    background-color: #231f20;
+}
+#misc-row{
+    background-color: #ffde00;
+    padding: 4px 0;
 }
 .container{
-    overflow:hidden ;
+    /* background-color: green; */
     width: 1170px;
-}
-nav, ul{
-overflow: hidden;
-}
-/* header */
-
-#top-row{
-   
-    padding: 10px 0;
-    height: 80px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
-#top-row>.container{
-    margin-left: auto;
-    margin-right: auto;
-}
-#top-row>.container>img{
+img{
+    height: 60px;
     float: left;
 }
-#top-row>.container>div{
-    float: right;}
-#nav-row{
-    background-color: aqua;
+#app-row>.container>.wrapper{
+    background-color: white;
+    width: 70%;
+    float: right;
+    height: 100%;
 }
-#logo{
-    height: 60px;
-    padding-left: 7px;
+/* #app-row>.container>.wrapper>.row:first-child{
+    background-color: white;
+} */
+#app-row>.container>.wrapper>.row:last-child{
+    background-color: white;
+    padding-top: 10px;
 }
-nav li{
-    cursor: pointer;
+
+#nav-lang{
+    float: right;
 }
-nav li:hover{
+#nav-lang>li{
+    float: left;
+    padding-left: 16px;
+
+    
+}
+#nav-lang>li:hover a{
+    color: #ff9d1e;
     text-decoration: underline;
 }
-#nav-lang{
-padding-bottom: 5px;
+#nav-lang>li>a{
+    color: black;
+    font-size: 0.8rem;
+    text-decoration: none;
 }
-#nav-lang li{
-    float: right;
-    padding: 5px 15px 5px 0;
-    font-size: 00.8rem;
-}
-#nav-lang li:hover{
-    color: #ff9d1e;
+#nav li>a:hover{
+    text-decoration: underline;;
 }
 #main-nav{
+    padding-top: 5px;
+    background-color: white;
     float: left;
 }
-
-#main-nav li{
+#smi-container{
+    background-color: white;
+    float: right;
+}
+#main-nav ul{
+    padding-top:8px;
+}
+#main-nav ul li{
+    padding-right: 40px;
     float: left;
-    padding: 20px 20px 0;
+}
+#smi-container ul li{
+    float: left;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+#smi-container ul li ion-icon{
+    padding: 5px;
+    color: white;
     font-size: 0.8rem;
 }
-#smi-container {
-    padding-top: 7px;
+#smi-container ul li:first-child{
+    background-color:#3f4da1 ;
 }
-#smi-container li{
+#smi-container ul li:nth-child(2){
+background-color: #57a0d7;
+}
+#smi-container ul li:nth-child(3){
+background-color: #57a0d7;
+}
+#smi-container ul li:last-child{
+background-color: #d74527;
+}
+#main-nav ul li>a{
+    font-size:0.9rem;
+    text-decoration: none;
+    color: black;
+}
+#main-nav ul li>a:hover{
+    text-decoration: underline;
+}
+#nav-row nav li{
     float: left;
+    z-index: 1;
+    position: relative;
+}
+#nav-row>.container nav li a{
+    position: relative;
+    font-size: 00.9rem;
+    display: inline-block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+#nav-row .container nav li>a:hover{
+    background-color:#ff9d1e ;
+    color: black;
+}
+#nav-row nav li a::after:hover{
+
+    position: absolute;
+    display: block;
+    content: "";
+    border-top:6px solid #ff9d1e ;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+
+}
+#misc-row .container{
+    text-align: right;
+}
+#misc-row .btn{
+    display: inline-block;
+    height: 40px;
+    background-color: #107ece;
+    color: white;
+    border-bottom: 2PX solid #0f027b;
+    border-radius: 4px;
+    padding: 0 10px;
+    line-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+}
+#misc-row .btn:hover{
+    background-color: #0865a9;
+}
+/* footer */
+footer .row{
+    background-color: #808285;
+}
+#copyright-row{
+    background-color: #ffde00;
+}
+#copyright-row>.container{
+    padding: 16px 0;
+    color: #515254;
+    font-size: 0.7rem;
+    text-align: center;
+}
+footer>.row .col{
+    float: left;
+    width: 25%;
+    height: 215px;
+    padding-top: 10px;
+
+}
+footer>.row .col h4{
+    padding-bottom: 16px;
+    color: white;
+}
+footer>.row .col nav li{
+    line-height: 1.4rem;
+}
+footer>.row .col nav li a{
+    font-size: 0.75rem;
+    color: white;
+    text-decoration: none;
+}
+footer>.row .col nav li a:hover{
+    color: #ff9d1e;
+}
+
+footer>.row .col:last-child{
+    background-color: #515254;
+}
+footer>.row .col:last-child{
+    padding-left: 15px;
+   
+}
+footer>.row .col:last-child p{
+    padding-bottom: 8px;
+    font-size: 0.75rem;
+    color: white;
+    line-height: 1.1rem;
+} 
+#tel-2{
+    padding-left: 23px;
+}
+footer>.row{
+    position: relative;
+    z-index: 0;
+}
+footer>.row::after{
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #515254;
+    width: 25%;
+    right:0 ;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+}
+aside{
+    font-weight: bold;
+    background-color: #1f1f1f;
+    position: fixed;
     padding: 5px;
-    background-color: yellow;
-    margin-left: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transform: rotate(270deg);
+    right: -38px;
+    bottom: 25%;
+    z-index: 99999;
+
+}
+aside:hover{
+    right: -31px;
+}
+aside a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+   
+}
+aside a ion-icon{
+    color: black;
+    font-size: 1rem;
+    vertical-align: middle;
     
+    
+}
+#bubble-wrapper{
+    display: inline-block;
+    background-color: #ffde00;
+    border-radius: 100%;
+    width: 25%;
+    height: 25%;
+    padding: 4px;
 }
 
 
