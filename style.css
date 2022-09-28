@@ -441,16 +441,18 @@ main>.row:nth-child(2)>.container>.col:last-child>ul>li>a>div:first-child{
     width: 90%;
 }
 #slider{
+    position: relative;
 padding: 10px 10px 0;
 height: 388px;
 overflow: hidden;
-/* overflow-y: hidden; */
+scroll-behavior: smooth;
+scroll-snap-type:block mandatory;
 margin-top: 20px;
 /* white-space:nowrap; */
 /* width: 850px; */
 }
 .slide{
-    position: relative;
+    position: absolute;
     background-repeat: no-repeat;
     height: 388px;
     background-size: contain;
@@ -458,6 +460,7 @@ margin-top: 20px;
     /* float: left; */
     width: 100%;
     display: inline-block;
+    scroll-snap-align: center;
 
 }
 .slide .prev, .slide .next{
@@ -488,23 +491,200 @@ margin-top: 20px;
     vertical-align: sub;
 }
 #slide-1{
+   
     background-image: url('https://boc.lk/image/data/Banner/200Day_investment-2022-Sept-Web.jpg');
 }
 #slide-2{
+    left:100%;
     background-image: url('https://boc.lk/image/data/Banner/Pita-pita_season-3-2022-E.jpg');
 }
 #slide-3{
+    left: 200%;
     background-image: url('https://boc.lk/image/data/Banner/SDA-2022-09.jpeg');
 }
 #slide-4{
+    left:300%;
     background-image: url('https://boc.lk/image/data/Banner/Top1000_2022-En_1.jpg');
 }
 #slide-5{
+    left: 400%;
     background-image: url('https://boc.lk/image/data/Banner/green-loan-2022.jpeg');
 }
 #slide-6{
+    left: 500%;
     background-image: url('https://boc.lk/image/data/Banner/power-branch-close-2022-En-1.jpg');
 }
+#slides-wrapper{
+    width: 100%;
+    position: relative;
+    animation-name: slider-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+#slider-wrapper{
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+@keyframes slider-animation{
+    0%, 10%{
+        left: 0;
+    }
+    16%, 26%{
+        left: -100%;
+    }
+    32%, 58%{
+        left: -200%;
+    }
+    64%, 76%{
+        left:-300%;
+    }
+    82%, 94%{
+        left: -400%;
+    }
+    100%{
+        left: -500%;
+    }
+
+}
+main>.row:nth-child(3){
+    padding: 20px 0;
+}
+main>.row:nth-child(3)>.container>.col{
+    height: 250px;
+    width: 25%;
+    float: left;
+    padding: 0 10px;
+    background-clip: content-box;
+    overflow: hidden;
+}
+main>.row:nth-child(3)>.container>.col:hover img{
+    transform: scale(1.2);
+}
+main>.row:nth-child(3)>.container>.col:hover .topic{
+    background-color:#ffde00;
+    color:#1f1f1f ;
+}
+main>.row:nth-child(3)>.container>.col img{
+    display: block;
+    width: 100%;
+    transition: transform 500ms;
+}
+main>.row:nth-child(3)>.container>.col>.wrapper{
+    overflow: hidden;
+    position: relative;
+}
+main>.row:nth-child(3)>.container>.col>.wrapper>.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+main>.row:nth-child(3)>.container>.col:hover .overlay{
+    display: block;
+}
+main>.row:nth-child(3)>.container>.col .topic{
+    z-index: 1;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background-color: #525252;
+    color: white;
+}
+/* main>.row:nth-child(3)>.container>.col:first-child{
+   background-color: red;
+}
+main>.row:nth-child(3)>.container>.col:nth-child(2){
+    background-color: green;
+}
+main>.row:nth-child(3)>.container>.col:nth-child(3){
+    background-color: blue;
+}
+main>.row:nth-child(3)>.container>.col:last-child{
+    background-color: yellow;
+ } */
+ /* row4 */
+ main>.row:last-child{
+    padding-bottom: 10px;
+ }
+ main>.row:last-child>.container>.col{
+    float: left;
+ }
+ main>.row:last-child>.container>.col:first-child,
+ main>.row:last-child>.container>.col:last-child{
+    padding: 10px;
+    width: 25%;
+    /* background-color: red; */
+    /* height: 100px; */
+    color: #1f1f1f;
+    text-align: right;
+
+ }
+ main>.row:last-child>.container>.col:first-child>p:first-of-type,
+ main>.row:last-child>.container>.col:last-child>p:first-of-type{
+    padding-bottom: 15px;
+    font-size: 18px;
+
+ }
+ main>.row:last-child>.container>.col:first-child>p:last-of-type{
+    font-size: 20px;
+ }
+ main>.row:last-child>.container>.col:first-child>p:last-of-type ion-con{
+    color: #8a8a8a;
+    padding-right: 15px;
+ }
+ main>.row:last-child>.container>.col:nth-child(2){
+    width: 50%;
+    /* height: 100px; */
+    /* background-color: green; */
+    text-align: center;
+    padding-top: 13px;
+ }
+ main>.row:last-child>.container>.col:last-child>p:last-of-type{
+    font-size: 0.7rem;
+    color: #8a8a8a;
+ }
+ #popup{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 450px;
+    background-color: #8a8a8af2;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 1px #000000ab;
+    
+    
+ }
+ #popup p{
+    padding-top: 35px;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    text-align: justify;
+
+ }
+ #close-wrapper{
+    position: absolute;
+    padding: 5px 0;
+    cursor: pointer;
+ }
+ #close-wrapper:hover{
+    color: white;
+ }
+ #close-wrapper ion-icon{
+    vertical-align: sub;
+    margin-right: spx;
+    background-color: red;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 1.2rem;
+ }
+
+
 
 
 
