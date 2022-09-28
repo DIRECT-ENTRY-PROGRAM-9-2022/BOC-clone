@@ -522,7 +522,8 @@ margin-top: 20px;
     animation-iteration-count: infinite;
 }
 #slider-wrapper{
-    width: 100%;
+    overflow: hidden;
+    height: 100%;
     position: relative;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
