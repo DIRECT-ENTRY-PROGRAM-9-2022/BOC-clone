@@ -65,7 +65,7 @@ h6{
     margin-top: 0;
     margin-bottom: 0;
 }
-img{
+#boc-logo{
     height: 60px;
     float: left;
 }
@@ -167,7 +167,7 @@ background-color: #d74527;
     background-color:#ff9d1e ;
     color: black;
 }
-#nav-row nav li a::after:hover{
+#nav-row nav li a:hover::after{
 
     position: absolute;
     display: block;
@@ -288,23 +288,163 @@ aside a{
     text-decoration: none;
     color: white;
     font-size: 0.8rem;
-   
 }
 aside a ion-icon{
     color: black;
     font-size: 1rem;
-    vertical-align: middle;
-    
-    
+    vertical-align: middle;  
 }
 #bubble-wrapper{
+    position: relative;
     display: inline-block;
     background-color: #ffde00;
     border-radius: 100%;
     width: 25%;
     height: 25%;
     padding: 4px;
+    transform: rotate(90deg);
 }
+#bubble-wrapper::before{
+    display: inline-block;
+    content: "";
+    background-color: #ffdd0057;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translate(-50%, -50%);
+
+    /* z-index: 1; */
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    animation-name: wave;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes wave{
+    from{
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    80%{ transform:scale(13);
+        opacity: 1;
+
+    }
+    81%{
+        opacity: 0;
+    }
+    to{opacity: 0;
+       
+    }
+}
+/* main */
+main>.row:first-child,
+main>.row:first-child>.container{
+    height: 90px;
+}
+main>.row:first-child>.container>.col{
+    padding: 20px 10px 0;
+    height: 100%;
+}
+main>.row:first-child>.container>.col:first-child{
+    /* background-color: red; */
+    width: 75%;
+    float: left;
+}
+main>.row:first-child>.container>.col:first-child>ul li{
+    width: 20%;
+    /* background-color: yellow;
+    border: 1px solid black; */
+    float: left;
+    text-align: right;
+}
+main>.row:first-child>.container>.col:first-child>ul li .flag{
+    height: auto;
+    border: 3px solid transparent;
+}
+main>.row:first-child>.container>.col:first-child>ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #1f1f1f;
+}
+main>.row:first-child>.container>.col:first-child>ul li a:hover .flag{
+    border: 3px solid #ffde00;
+}
+main .row:first-child>.container>.col:first-child>ul li .country-code{
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0.75rem;
+}
+main>.row:first-child>.container .col:last-child{
+    width: 25%;
+    float: right;
+}
+main .row:first-child>.container>.col:first-child>ul li h4{
+    font-size: 1.1rem;
+    padding-top: 15px;
+  
+}
+main>.row:nth-child(2)>.container>.col{
+    padding-top: 20px;
+    float: left;
+    height: 200px; /*remove*/
+}
+main>.row:nth-child(2)>.container>.col:first-child{
+    width: 75%;
+    background-color: red;
+}
+main>.row:nth-child(2)>.container>.col:last-child{
+    width: 25%;
+    /* background-color: green; */
+}main>.row:nth-child(2)>.container>.col:last-child svg{
+    height: 30px;
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li{
+    display: table;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    width: 100%;
+    border-bottom: 1px solid#ccc;
+    /* padding: 10px 10px 10px 20px; */
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul{
+    border-top: 10px solid #ececec;
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li:hover{
+    background-color: #525252;
+    
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li>a{
+    display: table-row;
+    text-decoration: none;
+    color: black;
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li:hover a,
+main>.row:nth-child(2)>.container>.col:last-child>ul>li:hover svg{
+    color: #ff9d1e;
+    fill: #ff9d1e;
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li>a>div{
+    display: table-cell;
+    padding:10px 10px 10px 20px;
+    vertical-align: middle;
+    line-height: 1.1rem;
+
+}
+main>.row:nth-child(2)>.container>.col:last-child>ul>li>a>div:first-child{
+    width: 90%;
+}
+
+
+
+
+
 
 
 
